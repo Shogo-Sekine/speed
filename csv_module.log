@@ -1,0 +1,36 @@
+0it [00:00, ?it/s]
+Filename: csv_module.py
+
+Line #    Mem usage    Increment   Line Contents
+================================================
+     5   13.691 MiB   13.691 MiB   @profile
+     6                             def main():
+     7   13.691 MiB    0.000 MiB     with open('data/sample.csv', mode='r') as f:
+     8   13.691 MiB    0.000 MiB       with open('data/csv_module_output.csv', mode='w') as output:
+     9   13.691 MiB    0.000 MiB         reader = csv.reader(f)
+    10   13.770 MiB    0.078 MiB         for row in tqdm(reader):
+    11   13.770 MiB    0.000 MiB           i == 0
+    12                                     for element in row:
+    13                                       output.write(element)
+    14                                       i += 1
+    15                                       if i != len(row):
+    16                                         output.write(',')
+    17                                     output.write('\n')
+
+
+Traceback (most recent call last):
+  File "/home/vagrant/.pyenv/versions/3.6.3/lib/python3.6/runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "/home/vagrant/.pyenv/versions/3.6.3/lib/python3.6/runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "/home/vagrant/.pyenv/versions/speed/lib/python3.6/site-packages/memory_profiler.py", line 1205, in <module>
+    exec_with_profiler(script_filename, prof, args.backend)
+  File "/home/vagrant/.pyenv/versions/speed/lib/python3.6/site-packages/memory_profiler.py", line 1132, in exec_with_profiler
+    exec(compile(f.read(), filename, 'exec'), ns, ns)
+  File "csv_module.py", line 21, in <module>
+    main()
+  File "/home/vagrant/.pyenv/versions/speed/lib/python3.6/site-packages/memory_profiler.py", line 659, in f
+    return func(*args, **kwds)
+  File "csv_module.py", line 11, in main
+    i == 0
+UnboundLocalError: local variable 'i' referenced before assignment
